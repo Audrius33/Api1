@@ -15,16 +15,11 @@ window.onload = function () {
 
     // Get elements
     let showLives = document.getElementById("mylives");
-    let showCatagory = document.getElementById("scatagory");
-
-    let showClue = document.getElementById("clue");
-
-
 
     // create alphabet ul
     let buttons = function () {
-        myButtons = document.getElementById('buttons');
-        letters = document.createElement('ul');
+       let myButtons = document.getElementById('buttons');
+       let letters = document.createElement('ul');
 
         for (let i = 0; i < alphabet.length; i++) {
             letters.id = 'alphabet';
@@ -51,8 +46,8 @@ window.onload = function () {
 
     // Create geusses ul
     result = function () {
-        wordHolder = document.getElementById('hold');
-        correct = document.createElement('ul');
+      let wordHolder = document.getElementById('hold');
+       let correct = document.createElement('ul');
 
         for (let i = 0; i < word.length; i++) {
             correct.setAttribute('id', 'my-word');
@@ -205,28 +200,4 @@ window.onload = function () {
 
     play();
 
-    // Hint
-
-    // hint.onclick = function() {
-    //
-    //     hints = [
-    //         ["Based in Mersyside", "Based in Mersyside", "First Welsh team to reach the Premier Leauge", "Owned by A russian Billionaire", "Once managed by Phil Brown", "2013 FA Cup runners up", "Gazza's first club"],
-    //         ["Science-Fiction horror film", "1971 American action film", "Historical drama", "Anamated Fish", "Giant great white shark"],
-    //         ["Northern city in the UK", "Home of AC and Inter", "Spanish capital", "Netherlands capital", "Czech Republic capital"]
-    //     ];
-    //
-    //     let catagoryIndex = categories.indexOf(chosenCategory);
-    //     let hintIndex = chosenCategory.indexOf(word);
-    //     showClue.innerHTML = "Clue: - " +  hints [catagoryIndex][hintIndex];
-    // };
-
-    // Reset
-
-    document.getElementById('reset').onclick = function() {
-        correct.parentNode.removeChild(correct);
-        letters.parentNode.removeChild(letters);
-        showClue.innerHTML = "";
-        context.clearRect(0, 0, 400, 400);
-        play();
-    }
 }
