@@ -13,6 +13,7 @@ window.onload = function () {
     let counter ;           // Count correct geusses
     let space;              // Number of spaces in word '-'
 
+
     // Get elements
     let showLives = document.getElementById("mylives");
 
@@ -20,6 +21,7 @@ window.onload = function () {
     let buttons = function () {
        let myButtons = document.getElementById('buttons');
        let letters = document.createElement('ul');
+
 
         for (let i = 0; i < alphabet.length; i++) {
             letters.id = 'alphabet';
@@ -36,11 +38,11 @@ window.onload = function () {
     // Select Catagory
     let selectCat = function () {
         if (chosenCategory === categories[0]) {
-            catagoryName.innerHTML = "The Chosen Category Is Premier League Football Teams";
+            catagoryName.innerHTML = "Sporto atletai";
         } else if (chosenCategory === categories[1]) {
-            catagoryName.innerHTML = "The Chosen Category Is Films";
+            catagoryName.innerHTML = "Filmo pavadinimas";
         } else if (chosenCategory === categories[2]) {
-            catagoryName.innerHTML = "The Chosen Category Is Cities";
+            catagoryName.innerHTML = "Miesto pavadinimas";
         }
     }
 
@@ -68,9 +70,11 @@ window.onload = function () {
 
     // Show lives
     comments = function () {
-        showLives.innerHTML = "You have " + lives + " lives";
+        showLives.innerHTML = "Tu turi " + lives + " gyvybių";
         if (lives < 1) {
             showLives.innerHTML = "Game Over";
+
+
         }
         for (let i = 0; i < geusses.length; i++) {
             if (counter + space === geusses.length) {
@@ -177,9 +181,9 @@ window.onload = function () {
     // Play
     play = function () {
         categories = [
-            ["everton", "liverpool", "swansea", "chelsea", "hull", "manchester-city", "newcastle-united"],
-            ["alien", "dirty-harry", "gladiator", "finding-nemo", "jaws"],
-            ["manchester", "milan", "madrid", "amsterdam", "prague"]
+            ["toni-krosas", "rafaelis-nadalis", "kevinas-durantas", "tigeris-woodsas", "rogeris-fedederis", "neymaras", "lionelis-messi" , "lebronas-jamesas"],
+            ["raganos", "enola-holmes", "slepynes", "dvynys", "platforma", "zmogus-voras", "liutas-karalius", "troliai", "venomas", "tas"],
+            ["keiptaunas", "sovetas", "benoni", "pretorija", "bangis", "bankokas", "seulas", "mumbajus", "daka", "hanojus" ]
         ];
 
         chosenCategory = categories[Math.floor(Math.random() * categories.length)];
@@ -196,8 +200,13 @@ window.onload = function () {
         comments();
         selectCat();
         canvas();
+
     }
 
     play();
 
 }
+function refreshPage(){
+    window.location.reload();
+}
+

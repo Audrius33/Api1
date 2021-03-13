@@ -7,19 +7,28 @@ body {
     text-align: center;
     font-size: 18px;
 }
+.d-flex {
+    display: flex;
+}
+.d-align {
+    align-items: center;
+}
+.d-justify {
+    justify-content: center;
+}
 
 .wrappper {
     display: flex;
     flex-direction: column;
     width: 100%;
     margin: 0 auto;
+
 }
 #catagoryName {
     display: flex;
     align-items: center;
     justify-content: center;
 }
-
 
 canvas {
     color: white;
